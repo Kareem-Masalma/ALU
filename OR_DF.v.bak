@@ -1,0 +1,5 @@
+module OR_DF(res, A, B);
+input A, B;
+output res;
+assign A | B;
+endmodule 

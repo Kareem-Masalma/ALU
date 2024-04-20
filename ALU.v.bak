@@ -1,0 +1,16 @@
+module ALU(result, Carry, A, B, Cin, Opcode);
+input [3:0] A, B;
+input [2:0] Opcode;
+input Cin;
+wire [3:0] sum, sub, bitA, bitO, res;
+wire co;
+wire cs;
+output reg [3:0] result;
+output reg Carry;
+wire [2:0] c;
+Adder (sum, cs, A, B, Cin); // To get the sum.
+Subtractor (sub, co, A, B, Cin); // To get the subtract.
+AndGate (bitA, A, B); // To get the AND.
+OrGate (bitO, A, B); // To get the OR.
+Mux (result, sum, sub, bitA, bitO, Opcode);
+endmodule 

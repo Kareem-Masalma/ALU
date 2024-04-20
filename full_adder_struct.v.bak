@@ -1,0 +1,10 @@
+module full_adder_struct(Sum, Carry, A, B, Cin);
+input A, B, Cin;
+output Sum, Carry;
+wire s1, c1, c2;
+xor g1 (Sum, A, B, Cin);
+xor g2 (s1, A, B);
+and (c1, A, B);
+and (c2, s1, Cin);
+or (Carry, c1, c2);
+endmodule 

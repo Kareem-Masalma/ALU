@@ -1,0 +1,10 @@
+module half_adder_behav(A, B, Sum, Carry);
+input A, B;
+output Sum, Carry;
+reg Sum, Carry;
+always @ (A, B)
+begin
+	Sum = A ^ B;
+	Carry = A & B;
+end 
+endmodule 

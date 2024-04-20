@@ -1,0 +1,3 @@
+module AND_behav(res, A, B);
+input A, B;
+output res;
